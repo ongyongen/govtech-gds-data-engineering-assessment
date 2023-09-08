@@ -26,3 +26,24 @@ def extract_restaurants_data():
     except requests.exceptions.Timeout:
         print("Error: request to API timed out")
         return None
+
+def extract_restaurant_records_from_parsed_json(data):
+    """
+    Extract data for each restaurant from the JSON file and 
+    collect them into a single list for ease of further processing
+
+    Input : list
+    Output : list
+    """
+
+    try:
+        restaurant_records = []
+        for record in data:
+            total_records = record['results_shown']
+            if total_records > 0:
+                restaurant_records += record['restaurants']
+        return restaurant_records
+    except KeyError as key_error:
+        print(f"KeyError: Failed to extract restaurant records : {key_error}")
+        return []
+    
