@@ -3,7 +3,7 @@ This file contains methods used in the Extract phase of the ETL data pipeline
 """
 
 import requests
-from constants import urls
+from constants import dataframe, urls
 
 def extract_restaurants_data():
     """
@@ -17,12 +17,15 @@ def extract_restaurants_data():
     try:
         response = requests.get(url, timeout=20)
 
+        # Successfully retrieved data
         if response.status_code == 200:
             return response.json()
+
+        # Did not successfully retrieve data
         print(f"API failed with status code {response.status_code}")
         print(f"Error: {response.text}")
         return None
-
+    # Connection timeout
     except requests.exceptions.Timeout:
         print("Error: request to API timed out")
         return None
@@ -36,14 +39,25 @@ def extract_restaurant_records_from_parsed_json(data):
     Output : list
     """
 
-    try:
-        restaurant_records = []
-        for record in data:
-            total_records = record['results_shown']
-            if total_records > 0:
-                restaurant_records += record['restaurants']
-        return restaurant_records
-    except KeyError as key_error:
-        print(f"KeyError: Failed to extract restaurant records : {key_error}")
-        return []
-    
+    restaurant_records = []
+    for record in data:
+        total_records = record['results_shown']
+        if total_records > 0:
+            restaurant_records += record['restaurants']
+    return restaurant_records
+
+def extract_countries_data(countries):
+    """
+    Create a dictionary to store key-value of pairs of
+    { country code : country name } mapping
+
+    Input : dataframe
+    Output : dictionary
+    """
+
+    d_countries = {}
+    for index in range(len(countries)):
+        country_name = countries.loc[index, dataframe.COUNTRY]
+        country_code = countries.loc[index, dataframe.COUNTRY_CODE]
+        d_countries[country_code] = country_name
+    return d_countries
