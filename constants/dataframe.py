@@ -2,7 +2,10 @@
 This file contains the constant values defined for the dataframes
 """
 
-# For dataframe columns required in CSV output
+# For data columns from Country Code Excel file
+COUNTRY_CODE = "Country Code"
+
+# For restaurant & event dataframe columns required in CSV output
 RESTAURANT_ID = "Restaurant Id"
 RESTAURANT_NAME = "Restaurant Name"
 COUNTRY = "Country"
@@ -16,8 +19,7 @@ EVENT_TITLE = "Event Title"
 EVENT_START_DATE = "Event Start Date"
 EVENT_END_DATE = "Event End Date"
 
-# For dataframe columns not required in CSV output
-COUNTRY_CODE = "country_code"
+# For restaurant & event dataframe columns not required in CSV output
 EVENTS = "events"
 COUNTRY_ID = "country_id"
 RATING_TEXT = "rating_text"
