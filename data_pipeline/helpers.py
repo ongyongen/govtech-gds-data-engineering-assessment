@@ -54,3 +54,14 @@ def create_template_events_df():
 
     data_frame = pd.DataFrame(columns)
     return data_frame
+
+def replace_na_cells(data_frame, replacement_str):
+    """
+    Replace NaN cells in the dataframe with a provided
+    replacement string
+
+    Input : dataframe, string 
+    Output : dataframe 
+    """
+    data_frame = data_frame.fillna(replacement_str)
+    return data_frame
