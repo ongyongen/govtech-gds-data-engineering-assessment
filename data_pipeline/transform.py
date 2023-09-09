@@ -5,7 +5,8 @@ This file contains methods used in the Transform phase of the ETL pipeline
 from constants import dataframe
 from data_pipeline.helpers import (
     create_template_restaurants_df,
-    map_country_code_to_country_name
+    map_country_code_to_country_name,
+    replace_na_cells
 )
 
 def process_restaurants(d_countries, restaurant_records):
@@ -44,3 +45,24 @@ def process_restaurants(d_countries, restaurant_records):
             data_frame.at[index, dataframe.EVENTS] = dataframe.EMPTY_EVENTS_CELL
 
     return data_frame
+
+def prepare_data_for_q1(data_frame):
+    """
+    Do final processing for template dataframe and parse it to 
+    fit the requirements of q1 (ie only include columns required by q1)
+        - Replace all NaN cells with NA (if any)
+        - Only include columns required in q1
+
+    Input : dataframe
+    Output : dataframe 
+    """
+    data_frame = replace_na_cells(data_frame, dataframe.NA_VALUE)
+    return data_frame[[
+        dataframe.RESTAURANT_ID,
+        dataframe.RESTAURANT_NAME,
+        dataframe.COUNTRY,
+        dataframe.CITY,
+        dataframe.USER_RATING_VOTES,
+        dataframe.USER_AGGREGATE_RATING,
+        dataframe.CUISINES
+    ]]

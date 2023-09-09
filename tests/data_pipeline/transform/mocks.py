@@ -13,19 +13,6 @@ mock_d_countries_test_process_restaurants = {
     30 : "Brazil"
 }
 
-mock_df_columns_test_process_restaurants = [
-       dataframe.RESTAURANT_ID,
-       dataframe.RESTAURANT_NAME,
-       dataframe.COUNTRY_ID,
-       dataframe.CITY,
-       dataframe.USER_RATING_VOTES,
-       dataframe.USER_AGGREGATE_RATING,
-       dataframe.CUISINES,
-       dataframe.RATING_TEXT,
-       dataframe.COUNTRY,
-       dataframe.EVENTS
-]
-
 mock_restaurants_list_test_process_restaurants = [
     {
         "restaurant": {
@@ -84,20 +71,6 @@ mock_restaurants_list_test_process_restaurants = [
     }
 ]
 
-mock_expected_df_list_test_process_restaurants = pd.DataFrame(columns=[
-    dataframe.RESTAURANT_ID,
-    dataframe.RESTAURANT_NAME,
-    dataframe.COUNTRY_ID,
-    dataframe.CITY,
-    dataframe.USER_RATING_VOTES,
-    dataframe.USER_AGGREGATE_RATING,
-    dataframe.CUISINES,
-    dataframe.RATING_TEXT,
-    dataframe.COUNTRY,
-    dataframe.EVENTS
-])
-
-
 mock_expected_data_test_process_restaurants = [
     {
       dataframe.RESTAURANT_ID: 18649486.0,
@@ -115,4 +88,40 @@ mock_expected_data_test_process_restaurants = [
 
 mock_expected_df_test_process_restaurants = pd.DataFrame(
     mock_expected_data_test_process_restaurants
+)
+
+# Mock data for : test_prepare_data_for_q1
+mock_data_prepare_data_for_q1 = [
+    {
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: "The Drunken Botanist",
+      dataframe.COUNTRY_ID: None,
+      dataframe.CITY: "Gurgaon",
+      dataframe.USER_RATING_VOTES: None,
+      dataframe.USER_AGGREGATE_RATING: "4.4",
+      dataframe.CUISINES: "Continental, Italian, North Indian, Chinese",
+      dataframe.RATING_TEXT: "Very Good",
+      dataframe.COUNTRY: "India",
+      dataframe.EVENTS: None,
+    }
+]
+
+mock_df_prepare_data_for_q1 = pd.DataFrame(
+    mock_data_prepare_data_for_q1
+)
+
+mock_expected_data_prepare_data_for_q1 = [
+    {
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: "The Drunken Botanist",
+      dataframe.COUNTRY: "India",
+      dataframe.CITY: "Gurgaon",
+      dataframe.USER_RATING_VOTES: dataframe.NA_VALUE,
+      dataframe.USER_AGGREGATE_RATING: "4.4",
+      dataframe.CUISINES: "Continental, Italian, North Indian, Chinese",
+    }
+]
+
+mock_expected_df_prepare_data_for_q1 = pd.DataFrame(
+    mock_expected_data_prepare_data_for_q1
 )
