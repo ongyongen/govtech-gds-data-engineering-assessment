@@ -31,3 +31,10 @@ mock_three_extract_photo_urls = {
         {"photo": {'url': "1"}}
     ]
 }
+
+# Mock data for : map_country_code_to_country_name
+mock_d_countries_map_country_code_to_country_name = {
+    1 : "Singapore",
+    2 : "Malaysia",
+    3 : "Indonesia"
+}

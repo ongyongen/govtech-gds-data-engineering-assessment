@@ -9,12 +9,13 @@ from tests.data_pipeline.helpers.mocks import (
     mock_two_replace_na_cells,
     mock_one_extract_photo_urls,
     mock_two_extract_photo_urls,
-    mock_three_extract_photo_urls
+    mock_three_extract_photo_urls,
+    mock_d_countries_map_country_code_to_country_name
 )
 
 def test_create_template_restaurants_df():
     """
-    Test that test_create_template_restaurants_df()
+    Test that test_create_template_restaurants_df
     returns a template dataframe with expected columns
     present
     """
@@ -39,7 +40,7 @@ def test_create_template_restaurants_df():
 
 def test_create_template_events_df():
     """
-    Test that create_template_events_df()
+    Test that create_template_events_df
     returns a template dataframe with expected columns
     present
     """
@@ -57,7 +58,7 @@ def test_create_template_events_df():
 
 def test_replace_na_cells():
     """
-    Test that replace_na_cells()
+    Test that replace_na_cells
     returns a template dataframe with empty cells
     replaced by an expected replacement string
     present
@@ -75,7 +76,7 @@ def test_replace_na_cells():
 
 def test_event_occurs_within_dates():
     """
-    Test that event_occurs_within_dates()
+    Test that event_occurs_within_dates
     returns true if event occurs in a stated
     date range (false otherwise)
     """
@@ -102,7 +103,7 @@ def test_event_occurs_within_dates():
 
 def test_extract_photo_urls():
     """
-    Test that extract_photo_urls() returns
+    Test that extract_photo_urls returns
     a comma-delimited string containing all
     photo urls if there's photo urls. Else return 
     the replacement string for empty dataframes
@@ -122,4 +123,24 @@ def test_extract_photo_urls():
     # is returned if there is 1 photo
     test_three = helpers.extract_photo_urls(mock_three_extract_photo_urls)
     assert test_three == "1"
-    
+
+def test_map_country_code_to_country_name():
+    """
+    Test that test_map_country_code_to_country_name returns
+    name of the country in countries dictionary given a country code
+    """
+
+    # Check that country name is returned if there is a country code
+    test_one = helpers.map_country_code_to_country_name(
+        mock_d_countries_map_country_code_to_country_name,
+        1
+    )
+    assert test_one == "Singapore"
+
+    # Check that placeholder NA value is returned if
+    # there is no associated country name for the input country code
+    test_one = helpers.map_country_code_to_country_name(
+        mock_d_countries_map_country_code_to_country_name,
+        10
+    )
+    assert test_one == dataframe.NA_VALUE

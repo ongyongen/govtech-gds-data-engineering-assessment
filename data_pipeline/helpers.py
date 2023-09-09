@@ -105,3 +105,16 @@ def extract_photo_urls(event):
         photo_urls_string = ",".join(photo_urls)
         return photo_urls_string if len(photo_urls_string) > 0 else dataframe.NA_VALUE
     return dataframe.NA_VALUE
+
+def map_country_code_to_country_name(d_countries, country_code):
+    """
+    Returns the country name associated with the provided country code
+    based on the countries dictionary of { country code : country name }
+    If country code does not exist, return NA
+
+    Input : dictionary, string
+    Output : string 
+    """
+    if country_code in d_countries:
+        return d_countries[country_code]
+    return dataframe.NA_VALUE
