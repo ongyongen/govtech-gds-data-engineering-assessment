@@ -8,7 +8,8 @@ from tests.data_pipeline.helpers.mocks import (
     mock_one_replace_na_cells,
     mock_two_replace_na_cells,
     mock_one_extract_photo_urls,
-    mock_two_extract_photo_urls
+    mock_two_extract_photo_urls,
+    mock_three_extract_photo_urls
 )
 
 def test_create_template_restaurants_df():
@@ -113,6 +114,12 @@ def test_extract_photo_urls():
     assert test_one == dataframe.NA_VALUE
 
     # Check that the photo urls string (containing all photos url)
-    # is returned if there are photos
+    # is returned if there are multiple photos
     test_two = helpers.extract_photo_urls(mock_two_extract_photo_urls)
     assert test_two == "1,2,3"
+
+    # Check that the photo urls string (containing all photos url)
+    # is returned if there is 1 photo
+    test_three = helpers.extract_photo_urls(mock_three_extract_photo_urls)
+    assert test_three == "1"
+    

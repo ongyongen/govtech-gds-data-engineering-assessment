@@ -25,3 +25,9 @@ mock_two_extract_photo_urls = {
         {"photo": {'url': "3"}}
     ]
 }
+
+mock_three_extract_photo_urls = {
+    "photos": [
+        {"photo": {'url': "1"}}
+    ]
+}
