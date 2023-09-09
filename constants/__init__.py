@@ -4,4 +4,5 @@ dataframe columns, dataframe cells and url paths
 """
 
 from .dataframe import *
-from .urls import *
+from .paths import *
+from .q3_output import *

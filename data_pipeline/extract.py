@@ -3,7 +3,7 @@ This file contains methods used in the Extract phase of the ETL data pipeline
 """
 
 import requests
-from constants import dataframe, urls
+from constants import dataframe, paths
 
 def extract_restaurants_data():
     """
@@ -12,7 +12,7 @@ def extract_restaurants_data():
     Input : None
     Output : Object
     """
-    url = urls.RESTAURANTS_DATA_URL
+    url = paths.RESTAURANTS_DATA_URL
 
     try:
         response = requests.get(url, timeout=20)
