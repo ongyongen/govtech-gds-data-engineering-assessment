@@ -6,7 +6,9 @@ from data_pipeline import helpers
 from constants import dataframe
 from tests.data_pipeline.helpers.mocks import (
     mock_one_replace_na_cells,
-    mock_two_replace_na_cells
+    mock_two_replace_na_cells,
+    mock_one_extract_photo_urls,
+    mock_two_extract_photo_urls
 )
 
 def test_create_template_restaurants_df():
@@ -96,3 +98,21 @@ def test_event_occurs_within_dates():
         "2019-04-02",
     )
     assert not test_two
+
+def test_extract_photo_urls():
+    """
+    Test that extract_photo_urls() returns
+    a comma-delimited string containing all
+    photo urls if there's photo urls. Else return 
+    the replacement string for empty dataframes
+    """
+
+    # Check that the empty replacement string for the dataframe is
+    # returned if there are no photos
+    test_one = helpers.extract_photo_urls(mock_one_extract_photo_urls)
+    assert test_one == dataframe.NA_VALUE
+
+    # Check that the photo urls string (containing all photos url)
+    # is returned if there are photos
+    test_two = helpers.extract_photo_urls(mock_two_extract_photo_urls)
+    assert test_two == "1,2,3"

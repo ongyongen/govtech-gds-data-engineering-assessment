@@ -90,3 +90,18 @@ def event_occurs_within_dates(
         event_start_dt >= fixed_start_dt
         and event_end_dt <= fixed_end_dt
     )
+
+def extract_photo_urls(event):
+    """
+    Obtain photo URLs for all photos of each event.
+    If there's multiple photo URLs, they are separated by
+    a comma delimiter
+
+    Input : list
+    Output : string
+    """
+    if 'photos' in event:
+        photo_urls = list(map(lambda photo: photo['photo']['url'], event['photos']))
+        photo_urls_string = ",".join(photo_urls)
+        return photo_urls_string if len(photo_urls_string) > 0 else dataframe.NA_VALUE
+    return dataframe.NA_VALUE
