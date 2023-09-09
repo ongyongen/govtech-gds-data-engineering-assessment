@@ -113,4 +113,6 @@ mock_expected_data_test_process_restaurants = [
     }
 ]
 
-mock_expected_df_test_process_restaurants = pd.DataFrame(mock_expected_data_test_process_restaurants)
+mock_expected_df_test_process_restaurants = pd.DataFrame(
+    mock_expected_data_test_process_restaurants
+)
