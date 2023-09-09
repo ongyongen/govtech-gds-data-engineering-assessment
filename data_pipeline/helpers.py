@@ -2,6 +2,7 @@
 This file contains helper methods used throughout the phases of the ETL pipeline
 """
 
+from datetime import datetime
 import pandas as pd
 from constants import dataframe
 
@@ -65,3 +66,27 @@ def replace_na_cells(data_frame, replacement_str):
     """
     data_frame = data_frame.fillna(replacement_str)
     return data_frame
+
+def event_occurs_within_dates(
+    event_start,
+    event_end,
+    fixed_start,
+    fixed_end
+):
+    """
+    Check whether an event occurs within a date range 
+
+    Input : string, string, string, string
+    Output : boolean 
+    """
+    date_pattern = "%Y-%m-%d"
+    event_start_dt = datetime.strptime(event_start, date_pattern)
+    event_end_dt = datetime.strptime(event_end, date_pattern)
+
+    fixed_start_dt = datetime.strptime(fixed_start, date_pattern)
+    fixed_end_dt = datetime.strptime(fixed_end, date_pattern)
+
+    return (
+        event_start_dt >= fixed_start_dt
+        and event_end_dt <= fixed_end_dt
+    )

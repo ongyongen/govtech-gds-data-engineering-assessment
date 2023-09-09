@@ -69,3 +69,30 @@ def test_replace_na_cells():
     test_df_two = helpers.replace_na_cells(mock_two_replace_na_cells, 0)
     assert test_df_two.loc[0,"C"] == 0
     assert test_df_two.loc[0,"D"] == 0
+
+def test_event_occurs_within_dates():
+    """
+    Test that event_occurs_within_dates()
+    returns true if event occurs in a stated
+    date range (false otherwise)
+    """
+
+    # Check that true is returned when
+    # an event falls within the stated date range
+    test_one = helpers.event_occurs_within_dates(
+        "2019-04-03",
+        "2019-04-03",
+        "2019-04-03",
+        "2019-04-03",
+    )
+    assert test_one
+
+    # Check that false is returned when
+    # an event falls outside the stated date range
+    test_two = helpers.event_occurs_within_dates(
+        "2019-04-03",
+        "2019-04-10",
+        "2019-04-01",
+        "2019-04-02",
+    )
+    assert not test_two
