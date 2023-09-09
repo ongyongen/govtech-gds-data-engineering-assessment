@@ -2,10 +2,8 @@
 This file contains helper methods used throughout the phases of the ETL pipeline
 """
 
-from datetime import datetime
 import pandas as pd
 from constants import dataframe
-
 
 def create_template_restaurants_df():
     """
@@ -31,6 +29,27 @@ def create_template_restaurants_df():
         dataframe.EVENT_TITLE: pd.Series(dtype='str'),
         dataframe.EVENT_START_DATE: pd.Series(dtype='str'),
         dataframe.EVENT_END_DATE: pd.Series(dtype='str')
+    }
+
+    data_frame = pd.DataFrame(columns)
+    return data_frame
+
+def create_template_events_df():
+    """
+    Create a template dataframe for the cleaned restaurant events data
+    in Apr 2019 (used for Q2 CSV output)
+
+    Input : None
+    Output : dataframe 
+    """
+    columns = {
+        dataframe.EVENT_ID: pd.Series(dtype='str'),
+        dataframe.RESTAURANT_ID: pd.Series(dtype='int'),
+        dataframe.RESTAURANT_NAME: pd.Series(dtype='str'),
+        dataframe.PHOTO_URL: pd.Series(dtype='str'),
+        dataframe.EVENT_TITLE: pd.Series(dtype='str'),
+        dataframe.EVENT_START_DATE: pd.Series(dtype='str'),
+        dataframe.EVENT_END_DATE: pd.Series(dtype='str'),
     }
 
     data_frame = pd.DataFrame(columns)
