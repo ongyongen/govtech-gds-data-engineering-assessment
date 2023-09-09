@@ -14,7 +14,16 @@ from data_pipeline import (
     prepare_data_for_q2,
 )
 
-if __name__ == '__main__':
+def run_script():
+    """
+    Outputs results to the console when user runs
+    python main.py in their terminal
+
+    Input : None
+    Output : String printed to the terminal
+    """
+
+    print("\n")
     print("=======================================================")
     print("Data processing script for restaurants data from Zomato")
     print("=======================================================")
@@ -31,7 +40,7 @@ if __name__ == '__main__':
     df1 = process_restaurants(d_countries, restaurant_records)
     df2 = process_restaurant_events_within_date_range(df1, '2019-04-01', '2019-04-30')
 
-    print("-The dataframes for Q1 and Q2 are processed")
+    print("- The dataframes for Q1 and Q2 are processed")
     q1_df = prepare_data_for_q1(df1)
     q2_df = prepare_data_for_q2(df2)
 
@@ -60,4 +69,8 @@ if __name__ == '__main__':
     print("Q3 Analysis")
     print("=========================")
     print("\n")
+
+
+if __name__ == '__main__':
+    run_script()
     
