@@ -107,9 +107,9 @@ def process_restaurant_events_within_date_range(df_processed_restaurants, fixed_
                 ):
 
                     # For each event in the stated time period (ie Apr 2019 in this case),
-                    # iterate through the associated list of photos to obtain all event photos' url links.
-                    # If the event has more than one photo, the other photo's url links
-                    # are concatenated together with a comma separator
+                    # iterate through the list of photos to obtain all event photos' url links.
+                    # If the event has more than one photo,
+                    # the other photo's url links are concatenated together with a comma separator
                     photo_urls_string = extract_photo_urls(event['event'])
 
                     # Insert the valid event data (within stated time period)

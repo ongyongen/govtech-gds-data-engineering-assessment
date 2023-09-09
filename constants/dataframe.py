@@ -27,3 +27,10 @@ RATING_TEXT = "rating_text"
 # For dataframe cells
 NA_VALUE = "NA"
 EMPTY_EVENTS_CELL = []
+
+# For rating texts to extract in Q3
+POOR = "Poor"
+AVERAGE = "Average"
+GOOD = "Good"
+VERY_GOOD = "Very Good"
+EXCELLENT = "Excellent"

@@ -2,7 +2,7 @@
 This file contains the main script to run 
 so as to initiate the data cleaning process
 """
-
+from datetime import datetime
 import pandas as pd
 from data_pipeline import (
     extract_countries_data,
@@ -12,6 +12,8 @@ from data_pipeline import (
     process_restaurant_events_within_date_range,
     prepare_data_for_q1,
     prepare_data_for_q2,
+    print_output_for_q3,
+    export_dataframe_to_csv
 )
 
 def run_script():
@@ -28,29 +30,27 @@ def run_script():
     print("Data processing script for restaurants data from Zomato")
     print("=======================================================")
 
+    print("- Extracting restaurants data")
     data = extract_restaurants_data()
-    print("- Restaurants data is read")
-
     countries = pd.read_excel('./data_files/Country-Code.xlsx')
-    print("- Countries data is read")
 
     d_countries = extract_countries_data(countries)
     restaurant_records = extract_restaurant_records_from_parsed_json(data)
 
+    print("- Processing dataframes for Q1 and Q2")
     df1 = process_restaurants(d_countries, restaurant_records)
     df2 = process_restaurant_events_within_date_range(df1, '2019-04-01', '2019-04-30')
 
-    print("- The dataframes for Q1 and Q2 are processed")
+    print("- Exporting dataframes for Q1 and Q2 into sample_output folder")
     q1_df = prepare_data_for_q1(df1)
     q2_df = prepare_data_for_q2(df2)
 
-    # curr_time = datetime.now()
-    # q1_filename = f"sample_output/q1_{curr_time}.csv"
-    # q2_filename = f"sample_output/q2_{curr_time}.csv"
+    curr_time = datetime.now()
+    q1_filename = f"sample_output/q1_{curr_time}.csv"
+    q2_filename = f"sample_output/q2_{curr_time}.csv"
 
-    # df1.to_csv(q1_filename)
-    # df2.to_csv(q2_filename)
-    print("- The dataframes for Q1 and Q2 are exported to sample_output folder")
+    # export_dataframe_to_csv(q1_df, q1_filename)
+    # export_dataframe_to_csv(q2_df, q2_filename)
 
     print("\n")
     print("=========================")
@@ -68,6 +68,7 @@ def run_script():
     print("=========================")
     print("Q3 Analysis")
     print("=========================")
+    print_output_for_q3(df1)
     print("\n")
 
 
