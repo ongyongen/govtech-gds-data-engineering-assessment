@@ -2,7 +2,6 @@
 This file contains the main script to run 
 so as to initiate the data cleaning process
 """
-from datetime import datetime
 import pandas as pd
 from data_pipeline import (
     extract_countries_data,
@@ -13,7 +12,6 @@ from data_pipeline import (
     prepare_data_for_q1,
     prepare_data_for_q2,
     print_output_for_q3,
-    export_dataframe_to_csv
 )
 
 def run_script():
