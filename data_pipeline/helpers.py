@@ -118,3 +118,42 @@ def map_country_code_to_country_name(d_countries, country_code):
     if country_code in d_countries:
         return d_countries[country_code]
     return dataframe.NA_VALUE
+
+
+def max_score_for_rating(restaurants_df, rating_text):
+    """
+    Returns the maximum score recorded for a rating text
+    across all records 
+
+    Input : dataframe, string
+    Output : float
+    """
+
+    # Store ratings_text_score as : (rating_text, aggregate_rating_score)
+    rating_text_score = zip(
+        restaurants_df[dataframe.RATING_TEXT],
+        restaurants_df[dataframe.USER_AGGREGATE_RATING]
+    )
+
+    all_ratings = list(filter(lambda text_score: text_score[0] == rating_text, rating_text_score))
+    rating_text_agg_scores = list(map(lambda text_score: text_score[1], all_ratings))
+    return max(rating_text_agg_scores)
+
+def min_score_for_rating(restaurants_df, rating_text):
+    """
+    Returns the minimum score recorded for a rating text
+    across all records 
+
+    Input : dataframe, string
+    Output : float
+    """
+
+    # Store ratings_text_score as : (rating_text, aggregate_rating_score)
+    rating_text_score = zip(
+        restaurants_df[dataframe.RATING_TEXT],
+        restaurants_df[dataframe.USER_AGGREGATE_RATING]
+    )
+
+    all_ratings = list(filter(lambda text_score: text_score[0] == rating_text, rating_text_score))
+    rating_text_agg_scores = list(map(lambda text_score: text_score[1], all_ratings))
+    return min(rating_text_agg_scores)

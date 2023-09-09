@@ -10,7 +10,8 @@ from tests.data_pipeline.helpers.mocks import (
     mock_one_extract_photo_urls,
     mock_two_extract_photo_urls,
     mock_three_extract_photo_urls,
-    mock_d_countries_map_country_code_to_country_name
+    mock_d_countries_map_country_code_to_country_name,
+    mock_df_test_scores_for_rating
 )
 
 def test_create_template_restaurants_df():
@@ -144,3 +145,78 @@ def test_map_country_code_to_country_name():
         10
     )
     assert test_one == dataframe.NA_VALUE
+
+def test_max_score_for_rating():
+    """
+    Test that test_max_score_for_rating returns
+    the maximum score for a rating text
+    """
+
+    test_max_poor = helpers.max_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.POOR
+    )
+
+    test_max_average = helpers.max_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.AVERAGE
+    )
+
+    test_max_good = helpers.max_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.GOOD
+    )
+
+    test_max_very_good = helpers.max_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.VERY_GOOD
+    )
+
+    test_max_excellent = helpers.max_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.EXCELLENT
+    )
+
+    assert test_max_poor == "2.4"
+    assert test_max_average == "3.5"
+    assert test_max_good == "4.0"
+    assert test_max_very_good == "4.4"
+    assert test_max_excellent == "4.9"
+
+
+def test_min_score_for_rating():
+    """
+    Test that test_min_score_for_rating returns
+    the minimum score for a rating text
+    """
+
+    test_min_poor = helpers.min_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.POOR
+    )
+
+    test_min_average = helpers.min_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.AVERAGE
+    )
+
+    test_min_good = helpers.min_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.GOOD
+    )
+
+    test_min_very_good = helpers.min_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.VERY_GOOD
+    )
+
+    test_min_excellent = helpers.min_score_for_rating(
+        mock_df_test_scores_for_rating,
+        dataframe.EXCELLENT
+    )
+
+    assert test_min_poor == "2.0"
+    assert test_min_average == "3.5"
+    assert test_min_good == "4.0"
+    assert test_min_very_good == "4.4"
+    assert test_min_excellent == "4.7"

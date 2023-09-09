@@ -82,22 +82,23 @@ def process_restaurant_events_within_date_range(df_processed_restaurants, fixed_
     df_processed_events = create_template_events_df()
     index = 0
 
-    # Iterate through each restaurant record and check if it has events
+    # Iterate through each restaurant record
     for i in df_processed_restaurants.index:
 
         events = df_processed_restaurants.loc[i, dataframe.EVENTS]
         restaurant_id = df_processed_restaurants.loc[i, dataframe.RESTAURANT_ID]
         restaurant_name = df_processed_restaurants.loc[i, dataframe.RESTAURANT_NAME]
 
+        # Check if restaurant has any events
         if events != dataframe.EMPTY_EVENTS_CELL:
             for event in events:
                 event_id = event['event'] ['event_id']
                 event_title = event['event'] ['title']
                 start_date = event['event'] ['start_date']
                 end_date = event['event'] ['end_date']
+
                 # Check that restaurant's events occured in the stated time period
                 # (ie Apr 2019 in this case)
-
                 if event_occurs_within_dates(
                     start_date,
                     end_date,
@@ -105,10 +106,10 @@ def process_restaurant_events_within_date_range(df_processed_restaurants, fixed_
                     fixed_end
                 ):
 
-                    # For each event, iterate through the associated list of photos
-                    # to obtain all event photos' url links.
-                    # If the event has more than one photo, the other photo's url links
-                    # are concatenated together with a comma separator
+                    # For each event in the stated time period (ie Apr 2019 in this case),
+                    # iterate through the list of photos to obtain all event photos' url links.
+                    # If the event has more than one photo,
+                    # the other photo's url links are concatenated together with a comma separator
                     photo_urls_string = extract_photo_urls(event['event'])
 
                     # Insert the valid event data (within stated time period)
