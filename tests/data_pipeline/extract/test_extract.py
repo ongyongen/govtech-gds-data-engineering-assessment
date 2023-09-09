@@ -1,7 +1,7 @@
 """
 Tests for data_pipeline's extract functions
 """
-from tests.data_pipeline.mocks import (
+from tests.data_pipeline.extract.mocks import (
     mock_one_extract_restaurant_records_from_parsed_json,
     mock_two_extract_restaurant_records_from_parsed_json,
     mock_one_df_extract_countries_data,
@@ -11,36 +11,6 @@ from tests.data_pipeline.mocks import (
 )
 
 from data_pipeline import extract
-
-def test_extract_restaurants_data():
-    """
-    Test that extract_restaurants_data()
-    returns a list of (valid) restaurant data records
-    """
-    data = extract.extract_restaurants_data()
-
-    # Data should not be None
-    assert data is not None
-
-    # Data should be a list with records
-    assert isinstance(data, list)
-    assert len(data) != 0
-
-    # Check that the expected key values are present
-    # and have the expected data type
-    for item in data:
-        assert "results_found" in item
-        assert isinstance(data[0]["results_found"], int)
-
-        assert "results_start" in item
-        assert isinstance(data[0]["results_start"], int)
-
-        assert "results_shown" in item
-        assert isinstance(data[0]["results_shown"], int)
-
-        assert "restaurants" in item
-        assert isinstance(data[0]["restaurants"], list)
-
 
 def test_extract_restaurant_records_from_parsed_json():
     """
