@@ -125,3 +125,170 @@ mock_expected_data_prepare_data_for_q1 = [
 mock_expected_df_prepare_data_for_q1 = pd.DataFrame(
     mock_expected_data_prepare_data_for_q1
 )
+
+# Mock data for : test_process_restaurant_events_within_date_range
+mock_events_list_test_process_restaurant_events_within_date_range = [
+    {
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: "The Drunken Botanist",
+      dataframe.COUNTRY_ID: 1,
+      dataframe.CITY: "Gurgaon",
+      dataframe.USER_RATING_VOTES: None,
+      dataframe.USER_AGGREGATE_RATING: "4.4",
+      dataframe.CUISINES: "Continental, Italian, North Indian, Chinese",
+      dataframe.RATING_TEXT: "Very Good",
+      dataframe.COUNTRY: "India",
+      dataframe.EVENTS: [
+          {
+          "event": {
+            "event_id": 322331,
+            "title": "Test Title 1",
+            "friendly_start_date": "06 March",
+            "friendly_end_date": "07 March",
+            "friendly_timing_str": "Wednesday, 6th March - Wednesday, 28th August",
+            "start_date": "2019-03-06",
+            "end_date": "2019-03-07",
+            "end_time": "23:59:59",
+            "start_time": "20:00:00",
+            "is_active": 1,
+            "date_added": "2019-03-06 11:41:21",
+            "photos": [
+              {
+                "photo": {
+                  "url": "1",
+                  "thumb_url": "example",
+                  "order": 0,
+                  "md5sum": "ac34cf3c271c9052e9d248c243df65a1",
+                  "id": 434436,
+                  "photo_id": 434436,
+                  "uuid": 52695233531,
+                  "type": "FEATURED"
+                }
+              },
+              {
+                "photo": {
+                  "url": "2",
+                  "thumb_url": "example",
+                  "order": 0,
+                  "md5sum": "ac34cf3c271c9052e9d248c243df65a1",
+                  "id": 434436,
+                  "photo_id": 434436,
+                  "uuid": 52695233531,
+                  "type": "FEATURED"
+                }
+              }
+            ],
+          }
+        }
+      ],
+    },
+    {
+      dataframe.RESTAURANT_ID: 34831785.0,
+      dataframe.RESTAURANT_NAME: "Cafeteria & Co",
+      dataframe.COUNTRY_ID: 1,
+      dataframe.CITY: "New Delhi",
+      dataframe.USER_RATING_VOTES: None,
+      dataframe.USER_AGGREGATE_RATING: "4.4",
+      dataframe.CUISINES: "English",
+      dataframe.RATING_TEXT: "Good",
+      dataframe.COUNTRY: "India",
+      dataframe.EVENTS: [
+          {
+          "event": {
+            "event_id": 400300,
+            "title": "Test Title 2",
+            "friendly_start_date": "01 March",
+            "friendly_end_date": "30 March",
+            "friendly_timing_str": "Wednesday, 6th March - Wednesday, 28th August",
+            "start_date": "2019-03-01",
+            "end_date": "2019-03-30",
+            "end_time": "23:59:59",
+            "start_time": "20:00:00",
+            "is_active": 1,
+            "date_added": "2019-03-06 11:41:21",
+            "photos": [],
+          }
+        }
+      ],
+    },
+]
+
+mock_df_process_restaurant_events_within_date_range = pd.DataFrame(
+    mock_events_list_test_process_restaurant_events_within_date_range
+)
+
+mock_expected_data_process_restaurant_events_within_date_range = [
+    {
+      dataframe.EVENT_ID: 322331,
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: "The Drunken Botanist",
+      dataframe.PHOTO_URL: "1,2",
+      dataframe.EVENT_TITLE: "Test Title 1",
+      dataframe.EVENT_START_DATE: "2019-03-06",
+      dataframe.EVENT_END_DATE: "2019-03-07"
+    },
+    {
+      dataframe.EVENT_ID: 400300,
+      dataframe.RESTAURANT_ID: 34831785,
+      dataframe.RESTAURANT_NAME: "Cafeteria & Co",
+      dataframe.PHOTO_URL: "NA",
+      dataframe.EVENT_TITLE: "Test Title 2",
+      dataframe.EVENT_START_DATE: "2019-03-01",
+      dataframe.EVENT_END_DATE: "2019-03-30"
+    }
+]
+
+mock_expected_df_process_restaurant_events_within_date_range = pd.DataFrame(
+    mock_expected_data_process_restaurant_events_within_date_range
+)
+
+# Mock data for : prepare_data_for_q2
+mock_data_prepare_data_for_q2 = [
+    {
+      dataframe.EVENT_ID: 322331,
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: None,
+      dataframe.PHOTO_URL: "1,2",
+      dataframe.EVENT_TITLE: "Test Title 1",
+      dataframe.EVENT_START_DATE: "2019-03-06",
+      dataframe.EVENT_END_DATE: "2019-03-07"
+    },
+    {
+      dataframe.EVENT_ID: 400300,
+      dataframe.RESTAURANT_ID: 34831785,
+      dataframe.RESTAURANT_NAME: "Cafeteria & Co",
+      dataframe.PHOTO_URL: "NA",
+      dataframe.EVENT_TITLE: None,
+      dataframe.EVENT_START_DATE: "2019-03-01",
+      dataframe.EVENT_END_DATE: "2019-03-30"
+    }
+]
+
+mock_df_prepare_data_for_q2 = pd.DataFrame(
+    mock_data_prepare_data_for_q2
+)
+
+mock_expected_data_prepare_data_for_q2 = [
+    {
+      dataframe.EVENT_ID: 322331,
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: dataframe.NA_VALUE,
+      dataframe.PHOTO_URL: "1,2",
+      dataframe.EVENT_TITLE: "Test Title 1",
+      dataframe.EVENT_START_DATE: "2019-03-06",
+      dataframe.EVENT_END_DATE: "2019-03-07"
+    },
+    {
+      dataframe.EVENT_ID: 400300,
+      dataframe.RESTAURANT_ID: 34831785,
+      dataframe.RESTAURANT_NAME: "Cafeteria & Co",
+      dataframe.PHOTO_URL: dataframe.NA_VALUE,
+      dataframe.EVENT_TITLE: dataframe.NA_VALUE,
+      dataframe.EVENT_START_DATE: "2019-03-01",
+      dataframe.EVENT_END_DATE: "2019-03-30"
+    }
+]
+
+mock_expected_df_prepare_data_for_q2 = pd.DataFrame(
+    mock_expected_data_prepare_data_for_q2
+)
