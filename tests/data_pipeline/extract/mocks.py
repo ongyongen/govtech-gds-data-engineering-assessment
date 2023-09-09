@@ -5,7 +5,7 @@ testing
 
 import pandas as pd
 
-# Mock data for : extract_restaurant_records_from_parsed_json
+# Mock data for : test_extract_restaurant_records_from_parsed_json
 mock_one_extract_restaurant_records_from_parsed_json = [
     {
         "results_found" : 0,
@@ -30,7 +30,7 @@ mock_two_extract_restaurant_records_from_parsed_json = [
     }
 ]
 
-# Mock data for : extract_countries_data
+# Mock data for : test_extract_countries_data
 mock_one_countries_data = [
     {
         "Country Code": 1, 
