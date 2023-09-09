@@ -1,5 +1,5 @@
 """
-The constants package consists of tests for the data processing
+The tests package consists of tests for the data processing
 functions
 """
 
