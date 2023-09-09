@@ -45,9 +45,9 @@ def run_script():
     q1_df = prepare_data_for_q1(df1)
     q2_df = prepare_data_for_q2(df2)
 
-    curr_time = datetime.now()
-    q1_filename = f"sample_output/q1_{curr_time}.csv"
-    q2_filename = f"sample_output/q2_{curr_time}.csv"
+    # curr_time = datetime.now()
+    # q1_filename = f"sample_output/q1_{curr_time}.csv"
+    # q2_filename = f"sample_output/q2_{curr_time}.csv"
 
     # export_dataframe_to_csv(q1_df, q1_filename)
     # export_dataframe_to_csv(q2_df, q2_filename)
