@@ -241,3 +241,54 @@ mock_expected_data_process_restaurant_events_within_date_range = [
 mock_expected_df_process_restaurant_events_within_date_range = pd.DataFrame(
     mock_expected_data_process_restaurant_events_within_date_range
 )
+
+# Mock data for : prepare_data_for_q2
+mock_data_prepare_data_for_q2 = [
+    {
+      dataframe.EVENT_ID: 322331,
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: None,
+      dataframe.PHOTO_URL: "1,2",
+      dataframe.EVENT_TITLE: "Test Title 1",
+      dataframe.EVENT_START_DATE: "2019-03-06",
+      dataframe.EVENT_END_DATE: "2019-03-07"
+    },
+    {
+      dataframe.EVENT_ID: 400300,
+      dataframe.RESTAURANT_ID: 34831785,
+      dataframe.RESTAURANT_NAME: "Cafeteria & Co",
+      dataframe.PHOTO_URL: "NA",
+      dataframe.EVENT_TITLE: None,
+      dataframe.EVENT_START_DATE: "2019-03-01",
+      dataframe.EVENT_END_DATE: "2019-03-30"
+    }
+]
+
+mock_df_prepare_data_for_q2 = pd.DataFrame(
+    mock_data_prepare_data_for_q2
+)
+
+mock_expected_data_prepare_data_for_q2 = [
+    {
+      dataframe.EVENT_ID: 322331,
+      dataframe.RESTAURANT_ID: 18649486.0,
+      dataframe.RESTAURANT_NAME: dataframe.NA_VALUE,
+      dataframe.PHOTO_URL: "1,2",
+      dataframe.EVENT_TITLE: "Test Title 1",
+      dataframe.EVENT_START_DATE: "2019-03-06",
+      dataframe.EVENT_END_DATE: "2019-03-07"
+    },
+    {
+      dataframe.EVENT_ID: 400300,
+      dataframe.RESTAURANT_ID: 34831785,
+      dataframe.RESTAURANT_NAME: "Cafeteria & Co",
+      dataframe.PHOTO_URL: dataframe.NA_VALUE,
+      dataframe.EVENT_TITLE: dataframe.NA_VALUE,
+      dataframe.EVENT_START_DATE: "2019-03-01",
+      dataframe.EVENT_END_DATE: "2019-03-30"
+    }
+]
+
+mock_expected_df_prepare_data_for_q2 = pd.DataFrame(
+    mock_expected_data_prepare_data_for_q2
+)

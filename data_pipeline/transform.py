@@ -122,3 +122,33 @@ def process_restaurant_events_within_date_range(df_processed_restaurants, fixed_
                     df_processed_events.loc[index, dataframe.EVENT_END_DATE] = end_date
                     index += 1
     return df_processed_events
+
+
+def prepare_data_for_q2(data_frame):
+    """
+    Do final processing for template dataframe and parse it to 
+    fit the requirements of q2 
+        - Replace all NaN cells with NA (if any)
+        - Reset column indexes to be in fixed intervals ie 1,2,3...
+        - Only include columns required in q2
+
+    Input : dataframe (from process_restaurant_events_within_date_range function)
+    Output : dataframe 
+    """
+
+    data_frame = replace_na_cells(data_frame, dataframe.NA_VALUE)
+
+    data_frame = data_frame.reset_index()
+    data_frame = data_frame.drop(columns=["index"])
+
+    data_frame = data_frame[[
+        dataframe.EVENT_ID,
+        dataframe.RESTAURANT_ID,
+        dataframe.RESTAURANT_NAME,
+        dataframe.PHOTO_URL,
+        dataframe.EVENT_TITLE,
+        dataframe.EVENT_START_DATE,
+        dataframe.EVENT_END_DATE,
+    ]]
+
+    return data_frame
