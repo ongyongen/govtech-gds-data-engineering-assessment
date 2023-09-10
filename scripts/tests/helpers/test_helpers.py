@@ -4,7 +4,8 @@ Tests for data_pipeline's extract functions
 
 from data_pipeline import helpers
 from constants import dataframe
-from tests.data_pipeline.helpers.mocks import (
+
+from .mocks import (
     mock_one_replace_na_cells,
     mock_two_replace_na_cells,
     mock_one_extract_photo_urls,

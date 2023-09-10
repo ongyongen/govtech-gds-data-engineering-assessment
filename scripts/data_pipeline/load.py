@@ -3,8 +3,7 @@ This file contains methods used in the Load phase of the ETL pipeline
 """
 import pandas as pd
 from constants import dataframe, q3_output
-from data_pipeline.helpers import min_score_for_rating, max_score_for_rating
-
+from .helpers import min_score_for_rating, max_score_for_rating
 
 def export_dataframe_to_csv(final_dataframe, csv_file_path):
     """

@@ -2,7 +2,7 @@
 Tests for data_pipeline's transform functions
 """
 from data_pipeline import transform
-from tests.data_pipeline.transform.mocks import (
+from .mocks import (
     mock_d_countries_test_process_restaurants,
     mock_restaurants_list_test_process_restaurants,
     mock_expected_df_test_process_restaurants,

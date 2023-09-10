@@ -3,6 +3,7 @@ This file contains the main script to run
 so as to initiate the data cleaning process
 """
 import pandas as pd
+
 from constants import paths
 from data_pipeline import (
     extract_countries_data,
@@ -14,6 +15,7 @@ from data_pipeline import (
     prepare_data_for_q2,
     print_output_for_q3,
 )
+
 
 def run_script():
     """
