@@ -3,7 +3,7 @@ This file contains methods used in the Transform phase of the ETL pipeline
 """
 
 from constants import dataframe
-from data_pipeline.helpers import (
+from .helpers import (
     create_template_restaurants_df,
     create_template_events_df,
     map_country_code_to_country_name,

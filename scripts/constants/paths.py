@@ -6,3 +6,4 @@ RESTAURANTS_DATA_URL = "https://raw.githubusercontent.com/Papagoat/brain-assessm
                        "main/restaurant_data.json"
 
 COUNTRY_CODE_FILE_PATH = "./data_files/Country-Code.xlsx"
+COUNTRY_CODE_LAMBDA_FILE_PATH = "./data_files/Country-Code.xlsx"
