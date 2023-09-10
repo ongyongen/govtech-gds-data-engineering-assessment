@@ -1,4 +1,17 @@
 # Government Digital Services, CC4.0 Data Engineering Intern Test
+This repository contains the code for the submission of Government Digital Services, CC4.0 Data Engineering Intern Test. <br></br>
+
+The `.github/workflows` directory contains a Github Action that conducts checks on code quality
+using Pylint and ensures that all unit tests created can be executed successfully before a code
+is merged back to main branch <br></br>
+
+The `sample_output` directory contains the CSV files output when `python main.py` is run (in the scripts directory) <br></br>
+
+The `scripts` directory contains the data cleaning scripts. Run `python main.py` in this directory
+to generate the CSV files for Q1 and Q2 (saved to `sample_output` directory) and the console output
+answers for Q3. <br></br>
+
+The `terraform` directory contains code to automate the deployment of AWS resources for the scripts
 
 ## Instructions to run the source code
 Clone this repository to your local computer <br></br>
@@ -45,8 +58,8 @@ The lambda function for the scripts will also be created <br></br>
 You can create a test event to test the lambda function. Once executed successfully, this will be the result shown <br></br>
 <img width="1106" alt="Screenshot 2023-09-10 at 6 37 28 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/e79f962d-ecca-4458-a032-a7128c1b908a">
 
-Once the function is a success, the CSV files would be output to the `restaurants-output-bucket`, ready for export. The EventBridge rule is configured to run the script
-every day from Monday to Friday at 5pm <br></br>
+Once the function execution is a success, the CSV files would be output to the `restaurants-output-bucket`, ready for export. The EventBridge rule is configured to run the script
+every day from Monday to Friday at 5pm. <br></br>
 <img width="1069" alt="Screenshot 2023-09-10 at 6 38 57 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/a75d0cb5-b598-4f41-a3e2-e449d256f157">
 
 ## Architecture diagram for current cloud services deployed
@@ -59,10 +72,10 @@ downloaded directly from the output S3 bucket. <br></br>
 <img width="458" alt="Screenshot 2023-09-10 at 6 54 39 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/60ce2d50-680d-4faa-997f-365ccd1d3600">
 
 ## Architecture design decisions and considerations
-1. Server vs Serverless based architecture
+1. Server vs Serverless based architecture <br></br>
 The first consideration taken into account was whether to design the infrasturcture in a server or serverless based architecture. I decided to design the cloud architecutre in a serverless approach. With a serverless architecture, I will only need to pay for compute resources used during the execution of my data cleaning script. Given that the nature of my task (data processing) is event-driven, and probably does not need to be running 24/7, a serverless architecture will be more cost effective in the long run. Additionally, due to the time constraints of this task, a serverless approach is more feasible as it is more straightforward to set up.
 
-2. Reproducibility 
+2. Reproducibility <br></br>
 Additionally, I also considered how I could make the deployment process more automated, so as to reduce the need to manually provision resources on the AWS console. To do so, I've decided to use Terraform to automate the provisiong and removal of my AWS resources, making the deployment process more predictable and easily auditable.
 
 ## Proposed architecture diagram for future iterations of the project
