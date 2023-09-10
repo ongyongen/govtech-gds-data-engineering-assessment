@@ -15,21 +15,21 @@ def create_template_restaurants_df():
     Output : dataframe 
     """
     columns = {
-        dataframe.RESTAURANT_ID: pd.Series(dtype='int'),
-        dataframe.RESTAURANT_NAME: pd.Series(dtype='str'),
-        dataframe.COUNTRY: pd.Series(dtype='str'),
-        dataframe.CITY: pd.Series(dtype='str'),
-        dataframe.USER_RATING_VOTES: pd.Series(dtype='str'),
-        dataframe.USER_AGGREGATE_RATING: pd.Series(dtype='str'),
-        dataframe.CUISINES: pd.Series(dtype='str'),
-        dataframe.COUNTRY_ID: pd.Series(dtype='int'),
-        dataframe.RATING_TEXT: pd.Series(dtype='str'),
-        dataframe.PHOTO_URL: pd.Series(dtype='str'),
-        dataframe.EVENTS: pd.Series(dtype='object'),
-        dataframe.EVENT_ID: pd.Series(dtype='str'),
-        dataframe.EVENT_TITLE: pd.Series(dtype='str'),
-        dataframe.EVENT_START_DATE: pd.Series(dtype='str'),
-        dataframe.EVENT_END_DATE: pd.Series(dtype='str')
+        dataframe.RESTAURANT_ID: pd.Series(dtype="int"),
+        dataframe.RESTAURANT_NAME: pd.Series(dtype="str"),
+        dataframe.COUNTRY: pd.Series(dtype="str"),
+        dataframe.CITY: pd.Series(dtype="str"),
+        dataframe.USER_RATING_VOTES: pd.Series(dtype="str"),
+        dataframe.USER_AGGREGATE_RATING: pd.Series(dtype="str"),
+        dataframe.CUISINES: pd.Series(dtype="str"),
+        dataframe.COUNTRY_ID: pd.Series(dtype="int"),
+        dataframe.RATING_TEXT: pd.Series(dtype="str"),
+        dataframe.PHOTO_URL: pd.Series(dtype="str"),
+        dataframe.EVENTS: pd.Series(dtype="object"),
+        dataframe.EVENT_ID: pd.Series(dtype="str"),
+        dataframe.EVENT_TITLE: pd.Series(dtype="str"),
+        dataframe.EVENT_START_DATE: pd.Series(dtype="str"),
+        dataframe.EVENT_END_DATE: pd.Series(dtype="str")
     }
 
     data_frame = pd.DataFrame(columns)
@@ -44,13 +44,13 @@ def create_template_events_df():
     Output : dataframe 
     """
     columns = {
-        dataframe.EVENT_ID: pd.Series(dtype='str'),
-        dataframe.RESTAURANT_ID: pd.Series(dtype='int'),
-        dataframe.RESTAURANT_NAME: pd.Series(dtype='str'),
-        dataframe.PHOTO_URL: pd.Series(dtype='str'),
-        dataframe.EVENT_TITLE: pd.Series(dtype='str'),
-        dataframe.EVENT_START_DATE: pd.Series(dtype='str'),
-        dataframe.EVENT_END_DATE: pd.Series(dtype='str'),
+        dataframe.EVENT_ID: pd.Series(dtype="str"),
+        dataframe.RESTAURANT_ID: pd.Series(dtype="int"),
+        dataframe.RESTAURANT_NAME: pd.Series(dtype="str"),
+        dataframe.PHOTO_URL: pd.Series(dtype="str"),
+        dataframe.EVENT_TITLE: pd.Series(dtype="str"),
+        dataframe.EVENT_START_DATE: pd.Series(dtype="str"),
+        dataframe.EVENT_END_DATE: pd.Series(dtype="str"),
     }
 
     data_frame = pd.DataFrame(columns)
@@ -76,7 +76,7 @@ def event_occurs_within_dates(
     """
     Check whether an event occurs within a date range 
 
-    Input : string, string, string, string
+    Input : string, string, string, string ("%Y-%m-%d" pattern)
     Output : boolean 
     """
     date_pattern = "%Y-%m-%d"
@@ -100,8 +100,8 @@ def extract_photo_urls(event):
     Input : list
     Output : string
     """
-    if 'photos' in event:
-        photo_urls = list(map(lambda photo: photo['photo']['url'], event['photos']))
+    if "photos" in event:
+        photo_urls = list(map(lambda photo: photo["photo"]["url"], event["photos"]))
         photo_urls_string = ",".join(photo_urls)
         return photo_urls_string if len(photo_urls_string) > 0 else dataframe.NA_VALUE
     return dataframe.NA_VALUE

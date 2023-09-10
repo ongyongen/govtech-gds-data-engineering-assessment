@@ -1,5 +1,6 @@
 """
-This file contains the url to the restaurant json file
+This file contains the url to the restaurant json file as well
+as the country code excel
 """
 
 RESTAURANTS_DATA_URL = "https://raw.githubusercontent.com/Papagoat/brain-assessment/" \

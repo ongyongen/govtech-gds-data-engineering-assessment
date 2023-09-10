@@ -80,7 +80,7 @@ def test_process_restaurant_events_within_date_range():
     # does indeed have 2 entries
     assert len(test_df) == 2
 
-    # Check that only the relevant columns required for Q1 are extracted
+    # Check that only the relevant columns required for Q2 are extracted
     assert sorted(test_df) == \
         sorted(mock_expected_df_process_restaurant_events_within_date_range.columns)
 
@@ -108,7 +108,7 @@ def test_prepare_data_for_q2():
     # does indeed have 2 entries
     assert len(test_df) == 2
 
-    # Check that only the relevant columns required for Q1 are extracted
+    # Check that only the relevant columns required for Q2 are extracted
     assert sorted(test_df) == \
         sorted(mock_expected_df_prepare_data_for_q2.columns)
 

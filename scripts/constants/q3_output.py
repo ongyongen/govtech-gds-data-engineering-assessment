@@ -15,7 +15,10 @@ form a complete, continuous (increasing) scale, from lowest score to highest sco
 
 To determine the ranges for each rating, with just the given dataset alone,
 I have decided to find the minimum and maximum score associated with each rating 
-within the dataset records. I have collected them into a table as show below:
+within the dataset records. Since the dataset itself may just be a snapshot of Zomato data at a specific day and time,
+there may not be a 100% representation of all possible scores associated with each rating text. Hence, I will use the 
+minimum and maximum observed rating scores to extrapolate the possible boundary threshold scores for each rating text.
+I have collected them into a table as show below:
 '''
 
 PARA_TWO = '''
@@ -25,7 +28,7 @@ With the assumption that "Poor" is the category for the lowest score, the minimu
 
 With the assumption that "Excellent" is the category for the highest score,
 the maximum score for "Excellent" would be the maximum score available in the scale. Since the 
-scores observed range from 2.2 to 4.9, this suggests that the rating is based on a scale of score
+scores observed range from 2.2 to 4.9, this suggests that the rating may based on a scale of score
 0 to 5. Hence the maximum score for "Excellent" would be 5.0.
 
 2. Determining the minimum and maximum possible score for each rating category

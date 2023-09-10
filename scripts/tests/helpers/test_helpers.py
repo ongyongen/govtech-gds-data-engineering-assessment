@@ -1,5 +1,5 @@
 """
-Tests for data_pipeline's extract functions
+Tests for data_pipeline's helper functions
 """
 
 from data_pipeline import helpers

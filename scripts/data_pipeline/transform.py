@@ -80,28 +80,28 @@ def process_restaurant_events_within_date_range(df_processed_restaurants, fixed_
     Output : dataframe
     """
     df_processed_events = create_template_events_df()
-    index = 0
+    events_index = 0
 
     # Iterate through each restaurant record
-    for i in df_processed_restaurants.index:
+    for rest_index in df_processed_restaurants.index:
 
-        events = df_processed_restaurants.loc[i, dataframe.EVENTS]
-        restaurant_id = df_processed_restaurants.loc[i, dataframe.RESTAURANT_ID]
-        restaurant_name = df_processed_restaurants.loc[i, dataframe.RESTAURANT_NAME]
+        events = df_processed_restaurants.loc[rest_index, dataframe.EVENTS]
+        restaurant_id = df_processed_restaurants.loc[rest_index, dataframe.RESTAURANT_ID]
+        restaurant_name = df_processed_restaurants.loc[rest_index, dataframe.RESTAURANT_NAME]
 
         # Check if restaurant has any events
         if events != dataframe.EMPTY_EVENTS_CELL:
             for event in events:
-                event_id = event['event'] ['event_id']
-                event_title = event['event'] ['title']
-                start_date = event['event'] ['start_date']
-                end_date = event['event'] ['end_date']
+                event_id = event["event"] ["event_id"]
+                event_title = event["event"] ["title"]
+                event_start_date = event["event"] ["start_date"]
+                event_end_date = event["event"] ["end_date"]
 
                 # Check that restaurant's events occured in the stated time period
                 # (ie Apr 2019 in this case)
                 if event_occurs_within_dates(
-                    start_date,
-                    end_date,
+                    event_start_date,
+                    event_end_date,
                     fixed_start,
                     fixed_end
                 ):
@@ -114,14 +114,16 @@ def process_restaurant_events_within_date_range(df_processed_restaurants, fixed_
 
                     # Insert the valid event data (within stated time period)
                     # into the new dataframe for Q2
-                    df_processed_events.loc[index, dataframe.EVENT_ID] =  event_id
-                    df_processed_events.loc[index, dataframe.RESTAURANT_ID] = restaurant_id
-                    df_processed_events.loc[index, dataframe.RESTAURANT_NAME] = restaurant_name
-                    df_processed_events.loc[index, dataframe.PHOTO_URL] = photo_urls_string
-                    df_processed_events.loc[index, dataframe.EVENT_TITLE] = event_title
-                    df_processed_events.loc[index, dataframe.EVENT_START_DATE] = start_date
-                    df_processed_events.loc[index, dataframe.EVENT_END_DATE] = end_date
-                    index += 1
+                    df_processed_events.loc[events_index, dataframe.EVENT_ID] =  event_id
+                    df_processed_events.loc[events_index, dataframe.RESTAURANT_ID] = restaurant_id
+                    df_processed_events.loc[events_index, dataframe.RESTAURANT_NAME] = \
+                        restaurant_name
+                    df_processed_events.loc[events_index, dataframe.PHOTO_URL] = photo_urls_string
+                    df_processed_events.loc[events_index, dataframe.EVENT_TITLE] = event_title
+                    df_processed_events.loc[events_index, dataframe.EVENT_START_DATE] = \
+                        event_start_date
+                    df_processed_events.loc[events_index, dataframe.EVENT_END_DATE] = event_end_date
+                    events_index += 1
     return df_processed_events
 
 

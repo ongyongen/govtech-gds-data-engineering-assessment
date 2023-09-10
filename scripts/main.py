@@ -2,8 +2,8 @@
 This file contains the main script to run 
 so as to initiate the data cleaning process
 """
+from datetime import datetime
 import pandas as pd
-
 from constants import paths
 from data_pipeline import (
     extract_countries_data,
@@ -14,6 +14,7 @@ from data_pipeline import (
     prepare_data_for_q1,
     prepare_data_for_q2,
     print_output_for_q3,
+    export_dataframe_to_csv
 )
 
 
@@ -46,12 +47,12 @@ def run_script():
     q1_df = prepare_data_for_q1(rest_df)
     q2_df = prepare_data_for_q2(events_df)
 
-    # curr_time = datetime.now()
-    # q1_filename = f"sample_output/q1_{curr_time}.csv"
-    # q2_filename = f"sample_output/q2_{curr_time}.csv"
+    curr_time = datetime.now()
+    q1_filename = f"../sample_output/q1_{curr_time}.csv"
+    q2_filename = f"../sample_output/q2_{curr_time}.csv"
 
-    # export_dataframe_to_csv(q1_df, q1_filename)
-    # export_dataframe_to_csv(q2_df, q2_filename)
+    export_dataframe_to_csv(q1_df, q1_filename)
+    export_dataframe_to_csv(q2_df, q2_filename)
 
     print("\n")
     print("=======================================================")
