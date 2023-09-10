@@ -32,7 +32,7 @@ Activate the virtual environment <br></br>
 Install the required libraries <br></br>
 `pip install -r requirements.txt`
 
-After installing the required libraries, you can navigate to the scripts directory to run the main.py file  <br></br>
+After installing the required libraries, you can open another separate terminal window and navigate to the scripts directory to run the main.py file <br></br>
 `cd scripts`  <br></br>
 `python main.py`
 
@@ -41,10 +41,10 @@ The output (preview of CSV files and the explanation for Q3) will be printed to 
 <img width="1155" alt="Screenshot 2023-09-10 at 9 44 52 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/7a6b60d0-a99b-4102-91ed-9a4887bc10f9">
 <img width="1151" alt="Screenshot 2023-09-10 at 9 47 16 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/91ae456b-87f7-4d2e-9076-9a37e363afc9">
 
-At the root directory, you can run tests on the codes using Pytest <br></br>
+At the root directory, you can run tests on the codes using Pytest (make sure your venv is still activated) <br></br>
 `python -m pytest`
 
-At the root directory, you can run Pylint checks on the codes in `scripts` directory <br></br>
+At the root directory, you can run Pylint checks on the codes in `scripts` directory (make sure your venv is still activated) <br></br>
 `pylint ./scripts`
 
 Note : Ensure that Pylint's import strategy is set to `fromEnvironment` in your VSCode's Settings file <br></br>
