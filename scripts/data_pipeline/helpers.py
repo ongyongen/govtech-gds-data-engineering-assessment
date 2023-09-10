@@ -20,7 +20,7 @@ def create_template_restaurants_df():
         dataframe.COUNTRY: pd.Series(dtype="str"),
         dataframe.CITY: pd.Series(dtype="str"),
         dataframe.USER_RATING_VOTES: pd.Series(dtype="str"),
-        dataframe.USER_AGGREGATE_RATING: pd.Series(dtype="str"),
+        dataframe.USER_AGGREGATE_RATING: pd.Series(dtype="float"),
         dataframe.CUISINES: pd.Series(dtype="str"),
         dataframe.COUNTRY_ID: pd.Series(dtype="int"),
         dataframe.RATING_TEXT: pd.Series(dtype="str"),

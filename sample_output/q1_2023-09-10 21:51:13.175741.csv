@@ -298,7 +298,7 @@
 296,16500330.0,Khan Uncle's Biryani House,India,Gangtok,24,3.4,"Fast Food, Biryani, Chinese"
 297,16500333.0,Nimtho,India,Gangtok,14,3.2,"Tibetan, Nepalese"
 298,16500304.0,Thakali,India,Gangtok,10,3.2,Nepalese
-299,18983524.0,Mehfill- Resto Bar,India,Gangtok,3,0,North Indian
+299,18983524.0,Mehfill- Resto Bar,India,Gangtok,3,0.0,North Indian
 300,18629821.0,Sula Vineyards,India,Nashik,228,4.7,"Cafe, Pizza, North Indian"
 301,1600099.0,Kokni Darbar,India,Nashik,938,4.2,"Fast Food, Chinese, Mughlai"
 302,1600067.0,Al Arabian Express,India,Nashik,689,4.4,Mughlai
@@ -1027,11 +1027,11 @@
 1025,6600214.0,Beirute,Brazil,Brasília,9,3.8,Arabian
 1026,6601549.0,It Speed Lunch,Brazil,Brasília,8,3.7,"Grill, Brazilian"
 1027,6601602.0,Taco Pep,Brazil,Brasília,31,4.5,"Mexican, Grill"
-1028,6600754.0,Carcassone,Brazil,Brasília,3,0,Bar Food
+1028,6600754.0,Carcassone,Brazil,Brasília,3,0.0,Bar Food
 1029,6600083.0,Villa Tevere,Brazil,Brasília,14,4.2,Italian
 1030,6600611.0,Fred,Brazil,Brasília,6,3.7,German
 1031,6601595.0,Outback Steakhouse,Brazil,Brasília,12,4.3,"American, Grill"
-1032,6600542.0,Avenida Paulista,Brazil,Brasília,0,0,"Italian, Pizza"
+1032,6600542.0,Avenida Paulista,Brazil,Brasília,0,0.0,"Italian, Pizza"
 1033,6601145.0,Bierfass Pontão,Brazil,Brasília,11,3.7,"Brazilian, Seafood"
 1034,6600879.0,Babel,Brazil,Brasília,5,2.8,Healthy Food
 1035,6600379.0,Sushi Loko,Brazil,Brasília,12,2.9,Japanese
@@ -1139,26 +1139,26 @@
 1137,7101483.0,Burger Liquor,New Zealand,Wellington City,185,4.4,American
 1138,7100178.0,Monsoon Poon,New Zealand,Wellington City,205,4.3,Asian
 1139,7100865.0,Shed 5,New Zealand,Wellington City,139,4.5,"European, Pacific"
-1140,7210754.0,The Golconda Bowl,NA,Dummy,0,0,"North Indian, Mughlai"
-1141,7204069.0,California Cantina,NA,Dummy,0,0,"Burger, Fast Food, Mexican, American, Pizza"
-1142,7200516.0,Bardelli's,NA,Dummy,0,0,South Indian
-1143,18133267.0,Baton Rouge,NA,Dummy,0,0,Steak
-1144,7204711.0,Dunkin Donuts,NA,Dummy,0,0,"Fast Food, Desserts"
-1145,7204029.0,L'Opera,NA,Dummy,0,0,Bakery
-1146,5.0,Yoko Sizzlers,NA,Dummy,0,0,Japanese
-1147,7200182.0,Kauai,NA,Dummy,0,0,Healthy Food
-1148,7204328.0,Mcdonalds,NA,Dummy,0,0,"Italian, North Indian"
-1149,3.0,Cafe Mangii,NA,Dummy,0,0,"Italian, European, Bakery"
-1150,2.0,PHD,NA,Dummy,0,0,"Fast Food, Biryani"
-1151,10.0,Hotel Sai Palace Garden,NA,Dummy,0,0,"North Indian, Chinese, South Indian"
-1152,7204068.0,La Pescadería de Walker,NA,Dummy,0,0,Seafood
-1153,7204327.0,Lane Cuisine Turc - Zorlu Alışveriş Merkezi,NA,Dummy,0,0,Turkish
-1154,7204032.0,4700 BC Popcorn,NA,Dummy,0,0,Desserts
-1155,7206255.0,Indian Zaik,NA,Dummy,0,0,"Fast Food, Indian"
-1156,7209209.0,Arabic Nights,NA,Dummy,0,0,"Turkish, Mediterranean"
-1157,15557859.0,Domino's Pizza,NA,Dummy,0,0,"Pizza, Fast Food"
-1158,15561694.0,Geometrico,NA,Dummy,0,0,Others
-1159,15561685.0,El Patio,NA,Dummy,0,0,Healthy Food
+1140,7210754.0,The Golconda Bowl,NA,Dummy,0,0.0,"North Indian, Mughlai"
+1141,7204069.0,California Cantina,NA,Dummy,0,0.0,"Burger, Fast Food, Mexican, American, Pizza"
+1142,7200516.0,Bardelli's,NA,Dummy,0,0.0,South Indian
+1143,18133267.0,Baton Rouge,NA,Dummy,0,0.0,Steak
+1144,7204711.0,Dunkin Donuts,NA,Dummy,0,0.0,"Fast Food, Desserts"
+1145,7204029.0,L'Opera,NA,Dummy,0,0.0,Bakery
+1146,5.0,Yoko Sizzlers,NA,Dummy,0,0.0,Japanese
+1147,7200182.0,Kauai,NA,Dummy,0,0.0,Healthy Food
+1148,7204328.0,Mcdonalds,NA,Dummy,0,0.0,"Italian, North Indian"
+1149,3.0,Cafe Mangii,NA,Dummy,0,0.0,"Italian, European, Bakery"
+1150,2.0,PHD,NA,Dummy,0,0.0,"Fast Food, Biryani"
+1151,10.0,Hotel Sai Palace Garden,NA,Dummy,0,0.0,"North Indian, Chinese, South Indian"
+1152,7204068.0,La Pescadería de Walker,NA,Dummy,0,0.0,Seafood
+1153,7204327.0,Lane Cuisine Turc - Zorlu Alışveriş Merkezi,NA,Dummy,0,0.0,Turkish
+1154,7204032.0,4700 BC Popcorn,NA,Dummy,0,0.0,Desserts
+1155,7206255.0,Indian Zaik,NA,Dummy,0,0.0,"Fast Food, Indian"
+1156,7209209.0,Arabic Nights,NA,Dummy,0,0.0,"Turkish, Mediterranean"
+1157,15557859.0,Domino's Pizza,NA,Dummy,0,0.0,"Pizza, Fast Food"
+1158,15561694.0,Geometrico,NA,Dummy,0,0.0,Others
+1159,15561685.0,El Patio,NA,Dummy,0,0.0,Healthy Food
 1160,7302200.0,Mamma Jamma,Brazil,Rio de Janeiro,12,4.5,Pizza
 1161,7303710.0,Paris 6,Brazil,Rio de Janeiro,28,4.4,French
 1162,7302898.0,Aprazível,Brazil,Rio de Janeiro,63,4.9,Brazilian

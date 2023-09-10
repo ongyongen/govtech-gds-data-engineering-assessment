@@ -31,7 +31,7 @@ def process_restaurants(d_countries, restaurant_records):
         data_frame.loc[index, dataframe.CITY] = restaurant["location"]["city"]
         data_frame.loc[index, dataframe.USER_RATING_VOTES] = restaurant["user_rating"]["votes"]
         data_frame.loc[index, dataframe.USER_AGGREGATE_RATING] = \
-            restaurant["user_rating"]["aggregate_rating"]
+            float(restaurant["user_rating"]["aggregate_rating"])
         data_frame.loc[index, dataframe.CUISINES] = restaurant["cuisines"]
         data_frame.loc[index, dataframe.RATING_TEXT] = restaurant["user_rating"]["rating_text"]
 

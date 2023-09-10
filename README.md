@@ -9,6 +9,12 @@ to generate the CSV files for Q1 and Q2 (saved to `sample_output` directory) and
 answers for Q3. <br></br>
 The `terraform` directory contains code to automate the deployment of AWS resources for the scripts.
 
+## Assumptions
+1) The restaurants.json data provided (ie https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json) appears to resemble the result of
+a GET API, possibly from the Zomato website. Hence, I have decided to ingest that data using python's requests.get() method to mimick how I would make an API GET request (instead of downloading the json to my local computer and uploading it again into my repository)
+2) The `res_id` field in `R` and `id` field in `restaurant` both refer to restaurant ID (just that they have different data types), and hence can be used interchangeably
+3) If 2 events have the same name, same start and end date, same restaurant, they can still be considered different events if they have a different event id.
+
 ## Instructions to run the source code
 Clone this repository to your local computer <br></br>
 `git clone https://github.com/ongyongen/govtech-gds-data-engineering-assessment.git`
@@ -31,8 +37,8 @@ After installing the required libraries, you can navigate to the scripts directo
 
 The output (preview of CSV files and the explanation for Q3) will be printed to the console as shown below. CSV files for Q1 and Q2 are saved to the `sample_output` directory. <br></br>
 <img width="1148" alt="Screenshot 2023-09-10 at 6 10 11 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/6026f88c-b797-438f-9044-e7a496262a3a">
-<img width="1156" alt="Screenshot 2023-09-10 at 6 09 25 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/3fdafa29-7ee9-44a2-97a2-9b82088b2263">
-<img width="1151" alt="Screenshot 2023-09-10 at 6 09 36 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/1b8dbb34-5f17-4fd3-bf57-5e3e8c1a9d08">
+<img width="1155" alt="Screenshot 2023-09-10 at 9 44 52 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/7a6b60d0-a99b-4102-91ed-9a4887bc10f9">
+<img width="1151" alt="Screenshot 2023-09-10 at 9 47 16 PM" src="https://github.com/ongyongen/govtech-gds-data-engineering-assessment/assets/97529863/91ae456b-87f7-4d2e-9076-9a37e363afc9">
 
 At the root directory, you can run tests on the codes using Pytest <br></br>
 `python -m pytest`
