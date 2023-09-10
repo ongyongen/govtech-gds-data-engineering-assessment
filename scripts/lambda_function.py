@@ -35,7 +35,7 @@ def lambda_handler(event, context):
     restaurant_records = extract_restaurant_records_from_parsed_json(data)
 
     rest_df = process_restaurants(d_countries, restaurant_records)
-    events_df = process_restaurant_events_within_date_range(rest_df, '2019-04-01', '2019-04-30')
+    events_df = process_restaurant_events_within_date_range(rest_df, "2019-04-01", "2019-04-30")
 
     q1_df = prepare_data_for_q1(rest_df)
     q2_df = prepare_data_for_q2(events_df)

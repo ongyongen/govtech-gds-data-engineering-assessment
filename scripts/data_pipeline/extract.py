@@ -41,9 +41,9 @@ def extract_restaurant_records_from_parsed_json(data):
 
     restaurant_records = []
     for record in data:
-        total_records = record['results_shown']
+        total_records = record["results_shown"]
         if total_records > 0:
-            restaurant_records += record['restaurants']
+            restaurant_records += record["restaurants"]
     return restaurant_records
 
 def extract_countries_data(countries):

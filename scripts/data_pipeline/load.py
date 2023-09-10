@@ -24,14 +24,14 @@ def print_output_for_q3(restaurants_dataframe):
     """
 
     data = {
-        "Minimum Rating Score": [
+        "Minimum Observed Rating Score": [
             min_score_for_rating(restaurants_dataframe, dataframe.POOR),
             min_score_for_rating(restaurants_dataframe, dataframe.AVERAGE),
             min_score_for_rating(restaurants_dataframe, dataframe.GOOD),
             min_score_for_rating(restaurants_dataframe, dataframe.VERY_GOOD),
             min_score_for_rating(restaurants_dataframe, dataframe.EXCELLENT),
         ],
-        "Maximum Rating Score" : [
+        "Maximum Observed Rating Score" : [
             max_score_for_rating(restaurants_dataframe, dataframe.POOR),
             max_score_for_rating(restaurants_dataframe, dataframe.AVERAGE),
             max_score_for_rating(restaurants_dataframe, dataframe.GOOD),
@@ -48,7 +48,8 @@ def print_output_for_q3(restaurants_dataframe):
         "Excellent"
     ]
 
-    # Creates pandas DataFrame.
+    # Creates pandas DataFrame to store the min and max observed thresholds
+    # for each rating score
     df_q3 = pd.DataFrame(data, index=df_index)
 
     rating_categories = set(restaurants_dataframe[dataframe.RATING_TEXT])

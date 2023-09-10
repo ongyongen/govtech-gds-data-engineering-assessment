@@ -45,7 +45,6 @@ resource "aws_iam_role" "restaurants_lambda_role" {
   })
 }
 
-
 data "aws_iam_policy_document" "restaurants_lambda_policy" {
   statement {
     effect    = "Allow"
@@ -58,7 +57,7 @@ data "aws_iam_policy_document" "restaurants_lambda_policy" {
 
 resource "aws_iam_policy" "restaurants_lambda_policy" {
   name        = "restaurants-lambda-policy"
-  description = "A test policy"
+  description = "A policy for restaurants lambda data processing pipeline"
   policy      = data.aws_iam_policy_document.restaurants_lambda_policy.json
 }
 
@@ -78,7 +77,7 @@ resource "aws_lambda_layer_version" "restaurants_lambda_layer" {
 }
 
 
-# Create the lambda function to scrape the geocaches
+# Create the lambda function to clean and process the data
 resource "aws_lambda_function" "restaurants_lambda_function" {
   function_name = "restaurant-lambda-function"
   

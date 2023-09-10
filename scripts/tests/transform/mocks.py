@@ -78,7 +78,7 @@ mock_expected_data_test_process_restaurants = [
       dataframe.COUNTRY_ID: 1,
       dataframe.CITY: "Gurgaon",
       dataframe.USER_RATING_VOTES: "4765",
-      dataframe.USER_AGGREGATE_RATING: "4.4",
+      dataframe.USER_AGGREGATE_RATING: 4.4,
       dataframe.CUISINES: "Continental, Italian, North Indian, Chinese",
       dataframe.RATING_TEXT: "Very Good",
       dataframe.COUNTRY: "India",
