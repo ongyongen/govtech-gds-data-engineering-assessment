@@ -11,10 +11,11 @@ The `terraform` directory contains code to automate the deployment of AWS resour
 
 ## Assumptions
 1) The restaurants.json data provided (ie https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json) appears to resemble the result of
-a GET API, possibly from the Zomato website. Hence, I have decided to ingest that data using python's requests.get() method to mimick how I would make an API GET request (instead of downloading the json to my local computer and uploading it again into my repository)
-2) The `res_id` field in `R` and `id` field in `restaurant` both refer to restaurant ID (just that they have different data types), and hence can be used interchangeably
+a GET API, possibly from the Zomato website. Hence, I have decided to ingest that data using python's requests.get() method to mimick how I would make an API GET request (instead of downloading the json to my local computer and uploading it again into my repository).
+2) The `res_id` field in `R` and `id` field in `restaurant` both refer to restaurant ID (just that they have different data types), and hence can be used interchangeably.
 3) If 2 events have the same name, same start and end date, same restaurant, they can still be considered different events if they have a different event id.
-
+4) For the Photo URL column required in Q2, all photos of an event should be extracted. If there are more than 1 photos associated with an event, I have concatenated their URLs together with a comma delimiter.
+   
 ## Instructions to run the source code
 Clone this repository to your local computer <br></br>
 `git clone https://github.com/ongyongen/govtech-gds-data-engineering-assessment.git`
